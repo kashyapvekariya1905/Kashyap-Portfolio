@@ -109,7 +109,41 @@
 
         <div class="section-detail-wrapper">
           <!-- <h3 class="section-heading">Hello!</h3> -->
-          <img class="rounded-lg" src="./Assets/kashyap.jpeg" alt="" height="500" width="500">
+          <!-- <img class="rounded-lg" src="./Assets/kashyap.jpeg" alt="" height="500" width="500"> -->
+          <div class="slider-container">
+            <img src="./Assets/kashyap.jpeg" class="active">
+            <img src="./Assets/kashyap2.jpeg">
+            <img src="./Assets/kashyap3.jpeg">
+        </div>
+    
+        <script>
+            const images = document.querySelectorAll('.slider-container img');
+            let currentIndex = 0;
+    
+            function changeImage() {
+                images[currentIndex].classList.remove('active');
+                images[currentIndex].classList.add('prev'); // Old image shrinks
+    
+                currentIndex = (currentIndex + 1) % images.length;
+    
+                images[currentIndex].classList.remove('prev');
+                images[currentIndex].classList.add('active'); // New image zooms in
+            }
+    
+            setInterval(changeImage, 3000); // Change image every 3 seconds
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
           <p class="section-text">My name is <span style="font-weight: bold;">Kashyap Vekariya</span> and I'm currently
             persuing Computer Science and
             Engineering. My
